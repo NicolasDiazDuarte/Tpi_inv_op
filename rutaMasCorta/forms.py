@@ -3,15 +3,16 @@ from .models import Source,Target,Weight
 
 class SourceForm(forms.ModelForm):
     class Meta:
-        model= Autor
+        model= Source
         fields = ['source']
+    
 
 class TargetForm(forms.ModelForm):
     class Meta:
-        model= Autor
+        model= Target
         fields = ['target']
         
 class WeightForm(forms.ModelForm):
     class Meta:
-        model= Autor
+        model= Weight
         fields = ['weightnro']

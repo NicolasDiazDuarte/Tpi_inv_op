@@ -2,6 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import matplotlib.pyplot as plt
+import networkx as nx
+import graph as g
 
 
 def main():
@@ -19,3 +22,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+    

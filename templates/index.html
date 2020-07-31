@@ -3,14 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Investigación Operativa</title>
+        {%block head%}
+        <title>{%block title%}Investigación Operativa{%endblock%}</title>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
         <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+        {%endblock%}
     </head>
 
     <body>
+        {%block content%}
         <header>
             <nav class="menu">
                 <ul>
@@ -26,5 +29,6 @@
             <img class="img-responsive" src="{% static '/img/imgIO.png'%}" alt="Imagen Principal">
             
         </div>   
+        {%endblock%}
     </body>
 </html>

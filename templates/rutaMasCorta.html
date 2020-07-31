@@ -3,19 +3,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Redes / Algoritmo de la ruta más corta </title>
+        {%block head%}
+        <title>{%block title%}Redes / Algoritmo de la ruta más corta {%endblock%}</title>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
         <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+        {%endblock%}
     </head>
     <body>
+        {%block content%}
         <header>
             <nav class="menu">
                 <ul>
                     <li><a href="https://simgraf-io.surge.sh/">Programacion Lineal</a></li>
                     <li><a href="https://www.google.com/">Programacion no Lineal</a></li>
-                    <li ><a href="https://www.google.com/">Redes</a></li>
+                    <li><a href="http://127.0.0.1:8000/RMC/">Redes</a></li>
                     <li><a href="https://www.google.com/">Inventario</a></li>
                 </ul>
             </nav>
@@ -24,7 +27,6 @@
         <h3>Problema de la ruta más corta</h3>
         <section id="cuerpo">
             <div id="table">
-                
                 <table>
                     <thead>
                         <h2>Ingrese los datos en la siguiente tabla:</h2>
@@ -36,29 +38,16 @@
                         <input type="button" id="btn1" value="Agregar" />
                     </thead>
                     <tbody>
+                        {%if rmcContext%}
+                        {%for relacion in rmcContext%}
                         <tr>
-                            <th><input/></th>
-                            <th><input/></th>
-                            <th><input/></th>
-                        </tr>
-                    </tbody>
-                    <!--    
-                    <tbody>
-                        {%if pets_context%}
-                        {%for pet in pets_context%}
-                        <tr>
-                            <td>{{pet.name}}</td>
-                            <td>{{pet.genre}}</td>
-                            <td>{{pet.aprox_age}}</td>
-                            
+                            <th>{{relacion.source}}</th>
+                            <th>{{relacion.target}}</th>
+                            <th>{{relacion.weightNro}}</th>
                         </tr>
                         {%endfor%}
-    
-                        {%else%}
-                            <h1>No hay registros de mascotas</h1>
                         {%endif%}
                     </tbody>
-                    -->
                 </table>
     
             </div>
@@ -67,5 +56,7 @@
                         
             </div>
         </section>
+
+        {%endblock%}
     </body>
 </html>

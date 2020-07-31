@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Redes / Algoritmo de la ruta más corta </title>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+    </head>
+    <body>
+        <header>
+            <nav class="menu">
+                <ul>
+                    <li><a href="https://simgraf-io.surge.sh/">Programacion Lineal</a></li>
+                    <li><a href="https://www.google.com/">Programacion no Lineal</a></li>
+                    <li ><a href="https://www.google.com/">Redes</a></li>
+                    <li><a href="https://www.google.com/">Inventario</a></li>
+                </ul>
+            </nav>
+        </header> 
+        <div class="table-input-exercise">
+            <table id="pets_list_table">
+                <thead>
+                    <tr>
+                        <th>Nodo incial</th>
+                        <th>Nodo final</th>
+                        <th>Peso de la relacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%if pets_context%}
+                    {%for pet in pets_context%}
+                    <tr>
+                        <td>{{pet.name}}</td>
+                        <td>{{pet.genre}}</td>
+                        <td>{{pet.aprox_age}}</td>
+                        
+                    </tr>
+                    {%endfor%}
+
+                    {%else%}
+                        <h1>No hay registros de mascotas</h1>
+                    {%endif%}
+                </tbody>
+            </table>
+
+            {%endblock%}
+
+            <table>
+                <tr>
+                   
+                </tr>
+                <tr>                
+                    <td><input /></td>
+                    <td><input /></td>  
+                    <td><input /></td>      
+                </tr> 
+
+                
+            </table>
+        </div>
+        <div class="graph-exercise">
+
+        </div>
+    </body>
+</html>

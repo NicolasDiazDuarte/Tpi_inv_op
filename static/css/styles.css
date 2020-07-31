@@ -37,3 +37,45 @@ h1 {
 .menu li:hover {
     background: rgba(0,0,0,0.1);
 }
+h2 {
+    text-align: center;
+    font-size: 20px;
+    margin:10px;
+}
+h3 {
+    text-align: center;
+    font-size: 25px;
+    margin:10px;
+}
+#cuerpo {
+    width: 90%;
+    border: 1px solid;
+    padding: 15px;
+    height: 400px;
+    margin: auto;
+    border-radius: 15px;
+}
+#table {
+    width: 50%;
+    margin: 5px 10px;
+    padding: 5px;
+    float: left;
+}
+th {
+    font-size: 15px;
+}
+#btn1 {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: aqua;
+    border: none;
+    margin-top: 15px;
+    float: left;
+    margin: 5px;
+}
+#graph {
+    width: 45%;
+    margin: 5px 10px;
+    padding: 5px;
+    float: right;
+}

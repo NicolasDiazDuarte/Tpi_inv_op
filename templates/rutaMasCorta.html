@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,49 +20,52 @@
                 </ul>
             </nav>
         </header> 
-        <div class="table-input-exercise">
-            <table id="pets_list_table">
-                <thead>
-                    <tr>
-                        <th>Nodo incial</th>
-                        <th>Nodo final</th>
-                        <th>Peso de la relacion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {%if pets_context%}
-                    {%for pet in pets_context%}
-                    <tr>
-                        <td>{{pet.name}}</td>
-                        <td>{{pet.genre}}</td>
-                        <td>{{pet.aprox_age}}</td>
-                        
-                    </tr>
-                    {%endfor%}
-
-                    {%else%}
-                        <h1>No hay registros de mascotas</h1>
-                    {%endif%}
-                </tbody>
-            </table>
-
-            {%endblock%}
-
-            <table>
-                <tr>
-                   
-                </tr>
-                <tr>                
-                    <td><input /></td>
-                    <td><input /></td>  
-                    <td><input /></td>      
-                </tr> 
-
+        <br/>
+        <h3>Problema de la ruta más corta</h3>
+        <section id="cuerpo">
+            <div id="table">
                 
-            </table>
-        </div>
-        <div class="graph-exercise">
-
-        </div>
+                <table>
+                    <thead>
+                        <h2>Ingrese los datos en la siguiente tabla:</h2>
+                        <tr>
+                            <th>Nodo incial</th>
+                            <th>Nodo final</th>
+                            <th>Peso de la relacion</th>
+                        </tr>
+                        <input type="button" id="btn1" value="Agregar" />
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><input/></th>
+                            <th><input/></th>
+                            <th><input/></th>
+                        </tr>
+                    </tbody>
+                    <!--    
+                    <tbody>
+                        {%if pets_context%}
+                        {%for pet in pets_context%}
+                        <tr>
+                            <td>{{pet.name}}</td>
+                            <td>{{pet.genre}}</td>
+                            <td>{{pet.aprox_age}}</td>
+                            
+                        </tr>
+                        {%endfor%}
+    
+                        {%else%}
+                            <h1>No hay registros de mascotas</h1>
+                        {%endif%}
+                    </tbody>
+                    -->
+                </table>
+    
+            </div>
+            <div class="graph">
+                <h2>El grafo correspondiente es:</h2>
+                        
+            </div>
+        </section>
     </body>
 </html>

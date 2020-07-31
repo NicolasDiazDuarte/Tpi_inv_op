@@ -57,7 +57,7 @@ ROOT_URLCONF = 'inv_op.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Selene/utn/CUARTO AÑO/Investigacion operativa/TPI/Tpi_inv_op/templates'],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates'),'/Selene/utn/CUARTO AÑO/Investigacion operativa/TPI/Tpi_inv_op/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

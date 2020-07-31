@@ -35,18 +35,17 @@
                             <th>Nodo final</th>
                             <th>Peso de la relacion</th>
                         </tr>
-                        <input type="button" id="btn1" value="Agregar" />
+                        
                     </thead>
                     <tbody>
-                        {%if rmcContext%}
-                        {%for relacion in rmcContext%}
-                        <tr>
-                            <th>{{relacion.source}}</th>
-                            <th>{{relacion.target}}</th>
-                            <th>{{relacion.weightNro}}</th>
-                        </tr>
-                        {%endfor%}
-                        {%endif%}
+                        <form method="POST">
+                            <tr>
+                                <th>{{source_form.as_p}}</th>
+                                <th>{{target_form.as_p}}</th>
+                                <th>{{weight_form.as_p}}</th>
+                            </tr>
+                            <button type="submit" id="btn1" value="Agregar">Agregar</button> 
+                        </form>
                     </tbody>
                 </table>
     

@@ -33,14 +33,13 @@ STATICFILES_DIRS = ['C:/Selene/utn/CUARTO AÑO/Investigacion operativa/TPI/Tpi_i
 # Application definition
 
 INSTALLED_APPS = [
-    'rutaMasCorta'
+    'rutaMasCorta',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rutaMasCorta',
 ]
 
 MIDDLEWARE = [

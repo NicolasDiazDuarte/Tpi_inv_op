@@ -4,15 +4,15 @@ from .models import Source,Target,Weight
 class SourceForm(forms.ModelForm):
     class Meta:
         model= Source
-        fields = ['source']
+        fields = ['Nodo_Origen']
     
 
 class TargetForm(forms.ModelForm):
     class Meta:
         model= Target
-        fields = ['target']
+        fields = ['Nodo_Destino']
         
 class WeightForm(forms.ModelForm):
     class Meta:
         model= Weight
-        fields = ['weightNro']
+        fields = ['Peso']

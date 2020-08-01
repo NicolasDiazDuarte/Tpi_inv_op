@@ -30,17 +30,15 @@
                 <table>
                     <thead>
                         <h2>Ingrese los datos en la siguiente tabla:</h2>
-                        <tr>
+                        <!--<tr>
                             <th>Nodo incial</th>
                             <th>Nodo final</th>
                             <th>Peso de la relacion</th>
-                        </tr>
-                        
+                        </tr>-->
                     </thead>
                     <tbody>
                         <tr>
                             <form method="POST">
-
                                 {%csrf_token%} 
                                 <th>{{source_form.as_p}}</th>
                                 <th>{{target_form.as_p}}</th>

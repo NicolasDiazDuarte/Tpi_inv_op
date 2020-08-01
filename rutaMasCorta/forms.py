@@ -15,4 +15,4 @@ class TargetForm(forms.ModelForm):
 class WeightForm(forms.ModelForm):
     class Meta:
         model= Weight
-        fields = ['weightnro']
+        fields = ['weightNro']

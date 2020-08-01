@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import TargetForm,SourceForm,WeightForm
 
@@ -13,14 +13,17 @@ def index(request):
         context={},
     )
 
-def InstanciarNodo(request):
+def instanciarNodos(request):
     if request.method== 'POST':
         source_form = SourceForm(request.POST)
         target_form = TargetForm(request.POST)
         weight_form = WeightForm(request.POST)
         if source_form.is_valid() and target_form.is_valid() and weight_form.is_valid():
-            agregarArreglo()
+            print('esta bien')
+            return redirect('rutaMasCorta.html')
     else:
         source_form=SourceForm()
+        target_form=TargetForm()
+        weight_form=WeightForm()
     return render(request,'rutaMasCorta.html',{'source_form':source_form,'target_form':target_form,'weight_form':weight_form})
         

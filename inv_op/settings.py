@@ -26,8 +26,10 @@ SECRET_KEY = 'z(vl$id%9a_8v52o!5w0^dtgy^anct%!bj7z5dic7=p5q*5r9)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-STATICFILES_DIRS = ['C:/Selene/utn/CUARTO AÑO/Investigacion operativa/TPI/Tpi_inv_op/static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
+)
 
 
 # Application definition
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'inv_op.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'templates'),'/Selene/utn/CUARTO AÑO/Investigacion operativa/TPI/Tpi_inv_op/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

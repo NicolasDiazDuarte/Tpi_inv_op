@@ -8,7 +8,7 @@
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'utn.png' %}">
         {%endblock%}
     </head>
     <body>
@@ -38,14 +38,16 @@
                         
                     </thead>
                     <tbody>
-                        <form method="POST">
-                            <tr>
-                                <th>{{source_form.as_p}}</th>
-                                <th>{{target_form.as_p}}</th>
-                                <th>{{weight_form.as_p}}</th>
-                            </tr>
-                            <button type="submit" id="btn1" value="Agregar">Agregar</button> 
-                        </form>
+                        <tr>
+                            <form method="POST">
+                                
+                                    <th>{{source_form.as_p}}</th>
+                                    <th>{{target_form.as_p}}</th>
+                                    <th>{{weight_form.as_p}}</th>
+                                
+                                <button type="submit" id="btn1" value="Agregar">Agregar</button> 
+                            </form>
+                        </tr>
                     </tbody>
                 </table>
     

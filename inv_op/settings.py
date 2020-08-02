@@ -36,6 +36,7 @@ STATICFILES_DIRS = (
 
 INSTALLED_APPS = [
     'rutaMasCorta',
+    'expansionMinima',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

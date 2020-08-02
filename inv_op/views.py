@@ -7,3 +7,6 @@ def index(request, *args, **kwargs):
 
 def RutaMasCorta(request, *args, **kwargs):
     return render(request, "rutaMasCorta.html", {})
+
+def ExpansionMinima(request, *args, **kwargs):
+    return render(request, "expansionMinima.html", {})

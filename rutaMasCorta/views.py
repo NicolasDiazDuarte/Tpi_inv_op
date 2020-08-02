@@ -13,7 +13,7 @@ def index(request):
         context={},
     )
 
-def instanciarNodos(request):
+def instanciarNodosRMC(request):
     if request.method== 'POST':
         source_form = SourceForm(request.POST)
         target_form = TargetForm(request.POST)

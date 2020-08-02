@@ -12,6 +12,7 @@ class TargetForm(forms.ModelForm):
         model= Target
         fields = ['Nodo_Destino']
         
+        
 class WeightForm(forms.ModelForm):
     class Meta:
         model= Weight

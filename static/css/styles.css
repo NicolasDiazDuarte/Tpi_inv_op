@@ -37,6 +37,23 @@ h1 {
 .menu li:hover {
     background: rgba(0,0,0,0.1);
 }
+.modelos ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.modelos li a {
+    display: block;
+    padding: 25px 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.modelos li:hover {
+    background: rgba(0,0,0,0.1);
+}
 h2 {
     text-align: center;
     font-size: 20px;
@@ -57,8 +74,6 @@ h3 {
 }
 #table {
     width: 50%;
-    margin: 5px 10px;
-    padding: 5px;
     float: left;
 }
 th {
@@ -75,7 +90,6 @@ th {
 }
 #graph {
     width: 45%;
-    margin: 5px 10px;
     padding: 5px;
     float: right;
 }

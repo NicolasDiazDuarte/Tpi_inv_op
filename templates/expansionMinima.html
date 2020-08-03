@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         {%block head%}
-        <title>{%block title%}Redes / Algoritmo de la ruta más corta {%endblock%}</title>
+        <title>{%block title%}Redes / Algoritmo de Expansión Mínima {%endblock%}</title>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
@@ -24,7 +24,7 @@
             </nav>
         </header> 
         <br/>
-        <h3>Problema de la ruta más Corta</h3>
+        <h3>Algoritmo del Árbol de Extensión Mínima</h3>
         <section id="cuerpo">
             <div id="table">
                 <table>
@@ -43,7 +43,6 @@
                                 <th>{{source_form.as_p}}</th>
                                 <th>{{target_form.as_p}}</th>
                                 <th>{{weight_form.as_p}}</th>
-                                {{arrPeso}}
                                 
                                 <button type="submit" id="btn1" value="Agregar">Agregar</button> 
                             </form>
@@ -54,6 +53,7 @@
             </div>
             <div id="graph">
                 <h2>El grafo correspondiente es:</h2>
+                        
             </div>
         </section>
 

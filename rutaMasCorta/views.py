@@ -14,6 +14,7 @@ def index(request):
         context={},
     )
 
+<<<<<<< HEAD
 def instanciarArreglos(flag):
     global arrNodoOrigen
     global arrNodoDestino
@@ -43,6 +44,9 @@ def instanciarNodos(request):
     source_form = SourceForm(request.POST or None)
     target_form = TargetForm(request.POST or None)
     weight_form = WeightForm(request.POST or None)
+=======
+def instanciarNodosRMC(request):
+>>>>>>> f608ad6d5c25f206400a166a494c9c3da34a2832
     if request.method== 'POST':
         source_form = SourceForm(request.POST )
         target_form = TargetForm(request.POST )

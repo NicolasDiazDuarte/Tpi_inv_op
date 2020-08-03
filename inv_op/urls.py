@@ -8,7 +8,7 @@ from expansionMinima.views import instanciarNodosEM
 
 urlpatterns = [
     path('', index, name="index"),
-    path('Redes/', redes),
-    path('RMC/', instanciarNodosRMC),
-    path('EM/', instanciarNodosEM),
+    path('Redes/', redes, name="redes"),
+    path('RMC/', instanciarNodosRMC, name="rutaMasCorta"),
+    path('EM/', instanciarNodosEM, name="expancionMinima"),
 ]

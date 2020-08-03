@@ -39,12 +39,14 @@ def instanciarNodos(request):
     global arrPeso
     global flag
     
-    flag=True
-
+    
+    source_form = SourceForm(request.POST or None)
+    target_form = TargetForm(request.POST or None)
+    weight_form = WeightForm(request.POST or None)
     if request.method== 'POST':
-        source_form = SourceForm(request.POST)
-        target_form = TargetForm(request.POST)
-        weight_form = WeightForm(request.POST)
+        source_form = SourceForm(request.POST )
+        target_form = TargetForm(request.POST )
+        weight_form = WeightForm(request.POST )
     if flag == True:
         instanciarArreglos(flag)
         
@@ -52,15 +54,16 @@ def instanciarNodos(request):
     if source_form.is_valid() and target_form.is_valid() and weight_form.is_valid():
         for key,value in request.POST.items():
             if key != 'csrfmiddlewaretoken':
-                if key == "peso" :
+                if key == "Peso" :
                     arrPeso.append(value)
                 else:
-                    if key == "arrNodoOrigen":
+                    if key == "Nodo Origen":
                         arrNodoOrigen.append(value)
                     else:
                         arrNodoDestino.append(value)
-        print(arrPeso)        
-        return render(request,'rutaMasCorta.html',{'source_form':source_form,'target_form':target_form,'weight_form':weight_form})
+
+        print(arrPeso)      
+        return render(request,'rutaMasCorta.html',{'source_form':source_form,'target_form':target_form,'weight_form':weight_form,'arrPeso':arrPeso})
     else:
         source_form=SourceForm()
         target_form=TargetForm()

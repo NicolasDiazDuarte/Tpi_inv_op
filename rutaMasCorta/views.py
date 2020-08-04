@@ -14,63 +14,34 @@ def index(request):
         context={},
     )
 
-<<<<<<< HEAD
-def instanciarArreglos(flag):
-    global arrNodoOrigen
-    global arrNodoDestino
-    global arrPeso
-    
-    arrNodoDestino = []
-    arrNodoOrigen = []
-    arrPeso = []
-    flag = False
 
-    
-        
-        
-def CargarArreglos():
-    print('todo good')
-    #usar try catch 
-    # if exists 
-    #probar con base de datos primero sino solo con arreglos 
 
-def instanciarNodos(request):
-    global arrNodoOrigen
-    global arrNodoDestino
-    global arrPeso
-    global flag
-    
-    
-    source_form = SourceForm(request.POST or None)
-    target_form = TargetForm(request.POST or None)
-    weight_form = WeightForm(request.POST or None)
-=======
+
 def instanciarNodosRMC(request):
->>>>>>> f608ad6d5c25f206400a166a494c9c3da34a2832
+    arrPeso=[]
+    arrNodoOrigen=[]
+    arrNodoDest=[]
     if request.method== 'POST':
-        source_form = SourceForm(request.POST )
-        target_form = TargetForm(request.POST )
-        weight_form = WeightForm(request.POST )
-    if flag == True:
-        instanciarArreglos(flag)
-        
-       
-    if source_form.is_valid() and target_form.is_valid() and weight_form.is_valid():
-        for key,value in request.POST.items():
-            if key != 'csrfmiddlewaretoken':
-                if key == "Peso" :
-                    arrPeso.append(value)
-                else:
-                    if key == "Nodo Origen":
-                        arrNodoOrigen.append(value)
-                    else:
-                        arrNodoDestino.append(value)
+        source= SourceForm(request.POST )
+        target = TargetForm(request.POST )
+        weight = WeightForm(request.POST )
 
-        print(arrPeso)      
-        return render(request,'rutaMasCorta.html',{'source_form':source_form,'target_form':target_form,'weight_form':weight_form,'arrPeso':arrPeso})
+        if source.is_valid() and target.is_valid() and weight.is_valid():
+            #source.save()
+            #target.save()
+            #weight.save()
+            
+            dataTarget = target.cleaned_data['Nodo_Destino']
+            dataSource = source.cleaned_data['Nodo_Origen']
+            dataWeight = weight.cleaned_data['Peso']
+            
+            arrNodoOrigen.append(dataSource)
+            arrNodoDest.append(dataTarget)
+            arrPeso.append(dataWeight)
+            return render(request,'rutaMasCorta.html',{'source':source,'target':target,'weight':weight,'arrNodoOrigen':arrNodoOrigen,'arrNodoDest':arrNodoDest,'arrPeso':arrPeso})
     else:
-        source_form=SourceForm()
-        target_form=TargetForm()
-        weight_form=WeightForm()
-    return render(request,'rutaMasCorta.html',{'source_form':source_form,'target_form':target_form,'weight_form':weight_form})
+        source=SourceForm()
+        target=TargetForm()
+        weight=WeightForm()
+    return render(request,'rutaMasCorta.html',{'source':source,'target':target,'weight':weight})
         

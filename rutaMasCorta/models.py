@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 #Clase que maneja el nodo origen cargado
 class Source(models.Model):
@@ -7,8 +8,6 @@ class Source(models.Model):
     class Meta:
         verbose_name= 'Nodo_Origen'
         
-    def __str__(self):
-        return '{}'.format(self.source)
 
 #Clase que maneja el nodo destino cargado
 class Target(models.Model):
@@ -17,8 +16,6 @@ class Target(models.Model):
     class Meta:
         verbose_name= 'Nodo_Destino'
 
-    def __str__(self):
-        return '{}'.format(self.target)
 
 #Clase que maneja el peso de la relacion entre el nodo origen y destino cargado
 class Weight(models.Model):
@@ -28,5 +25,26 @@ class Weight(models.Model):
     class Meta:
         verbose_name= 'Peso'
 
-    def __str__(self):
-        return '{}'.format(self.weightNro)
+    
+
+class ArrPeso(models.Model):
+    listaP = ArrayField(models.CharField(max_length=100, blank=True))
+    
+    class Meta:
+        verbose_name= 'listaP'
+
+    
+class ArrOrigen(models.Model):
+    listaO = ArrayField(models.CharField(max_length=100, blank=True))
+    
+    class Meta:
+        verbose_name= 'listaO'
+
+
+
+class ArrDest(models.Model):
+    listaD = ArrayField(models.CharField(max_length=100, blank=True))
+    
+    class Meta:
+        verbose_name= 'listaD'
+

@@ -72,21 +72,54 @@ h3 {
     margin: auto;
     border-radius: 15px;
 }
+#cargaDatos {
+    width: 100%;
+    border: 1px solid red;
+    background-color: red;
+    float: left;
+    height: 200px;
+    margin: 10px;
+}
+#botones {
+    width: 100%;
+    border: 1px solid red;
+    background-color: red;
+    float: right
+}
 #table {
     width: 50%;
     float: left;
 }
 th {
     font-size: 15px;
+    width: 5px;
+    padding: 5px;
 }
 #btn1 {
     padding: 8px;
     border-radius: 5px;
     background-color: aqua;
     border: none;
-    margin-top: 15px;
+    margin-top: 20px;
     float: left;
-    margin: 5px;
+    margin: 10px;
+}
+.boton {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#btn2 {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: aqua;
+    border: none;
+    margin-top: 80px;
+    margin: 10px;
 }
 #graph {
     width: 45%;

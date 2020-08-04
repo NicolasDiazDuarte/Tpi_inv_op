@@ -30,15 +30,11 @@
                 <table>
                     <thead>
                         <h2>Ingrese los datos en la siguiente tabla:</h2>
-                        <!--<tr>
-                            <th>Nodo incial</th>
-                            <th>Nodo final</th>
-                            <th>Peso de la relacion</th>
-                        </tr>-->
                     </thead>
                     <tbody>
                         <tr>
                             <form method="POST">
+<<<<<<< HEAD
                                 {%csrf_token%} 
                                 <th>{{source.as_p}}</th>
                                 <th>{{target.as_p}}</th>
@@ -48,10 +44,26 @@
                                 {{ArrPeso}}
                                 
                                 <button type="submit" id="btn1" value="Agregar">Agregar</button> 
+=======
+                                <div>
+                                    {%csrf_token%} 
+                                    <th>{{source.as_p}}</th>
+                                    <th>{{target.as_p}}</th>
+                                    <th>{{weight.as_p}}</th>
+                                    {{arrNodoOrigen}}
+                                    {{arrNodoDest}}
+                                    {{arrPeso}}
+                                    
+                                    <button type="submit" id="btn1" value="Agregar">Agregar</button> 
+                                </div>
+>>>>>>> 7ed3166c080941c3e8d1a93986474ab603f18491
                             </form>
                         </tr>
                     </tbody>
                 </table>
+                <div class="boton">
+                    <button type="submit" id="btn2" value="Obtener resultado">Obtener resultado</button>
+                </div>                
     
             </div>
             <div id="graph">

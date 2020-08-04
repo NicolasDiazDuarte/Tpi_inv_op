@@ -14,13 +14,12 @@ def index(request):
         context={},
     )
 
-
-
+arrPeso=[]
+arrNodoOrigen=[]
+arrNodoDest=[]
 
 def instanciarNodosRMC(request):
-    arrPeso=[]
-    arrNodoOrigen=[]
-    arrNodoDest=[]
+    
     if request.method== 'POST':
         source= SourceForm(request.POST )
         target = TargetForm(request.POST )

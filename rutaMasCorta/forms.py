@@ -1,19 +1,15 @@
 from django import forms
-from .models import Source,Target,Weight
+from .models import Rows,Nodos,Lista
 
-class SourceForm(forms.ModelForm):
-    class Meta:
-        model= Source
-        fields = ['Nodo_Origen',]
-    
 
-class TargetForm(forms.ModelForm):
+class RowsForm(forms.ModelForm):
     class Meta:
-        model= Target
-        fields = ['Nodo_Destino',]
-        
-        
-class WeightForm(forms.ModelForm):
+        model= Rows
+        fields = ['rows',]
+
+class NodosForm(forms.ModelForm):
     class Meta:
-        model= Weight
-        fields = ['Peso',]
+        model= Nodos
+        fields = ['source','target','weight',]    
+
+

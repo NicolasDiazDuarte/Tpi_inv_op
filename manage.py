@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+#import psycopg2
 #import matplotlib.pyplot as plt
 #import networkx as nx
 #import graph as g
@@ -21,5 +22,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
+    #conn=psycopg2.connect(dbname='tpi', user='nico', host='localhost', password='1234postgre', port=5432)
+    #conn.autocommit=True
+    #cur=conn.cursor() 
     

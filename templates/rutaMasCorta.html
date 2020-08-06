@@ -34,29 +34,15 @@
                     <tbody>
                         <tr>
                             <form method="POST">
-<<<<<<< HEAD
+
                                 {%csrf_token%} 
                                 <th>{{source.as_p}}</th>
                                 <th>{{target.as_p}}</th>
                                 <th>{{weight.as_p}}</th>
-                                {{ArrOrigen}}
-                                {{ArrDest}}
-                                {{ArrPeso}}
                                 
                                 <button type="submit" id="btn1" value="Agregar">Agregar</button> 
-=======
-                                <div>
-                                    {%csrf_token%} 
-                                    <th>{{source.as_p}}</th>
-                                    <th>{{target.as_p}}</th>
-                                    <th>{{weight.as_p}}</th>
-                                    {{arrNodoOrigen}}
-                                    {{arrNodoDest}}
-                                    {{arrPeso}}
-                                    
-                                    <button type="submit" id="btn1" value="Agregar">Agregar</button> 
-                                </div>
->>>>>>> 7ed3166c080941c3e8d1a93986474ab603f18491
+
+
                             </form>
                         </tr>
                     </tbody>

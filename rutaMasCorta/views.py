@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import TargetForm,SourceForm,WeightForm
-from .models import Source,Target,Weight,ArrDest,ArrOrigen,ArrPeso
+from .models import Source,Target,Weight
+
 
 # Create your views here.
 
@@ -14,16 +15,8 @@ def index(request):
         context={},
     )
 
-arrPeso=[]
-arrNodoOrigen=[]
-arrNodoDest=[]
 
 def instanciarNodosRMC(request):
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 7ed3166c080941c3e8d1a93986474ab603f18491
     if request.method== 'POST':
         source= SourceForm(request.POST )
         target = TargetForm(request.POST )
@@ -34,12 +27,8 @@ def instanciarNodosRMC(request):
             dataTarget = target.cleaned_data['Nodo_Destino']
             dataSource = source.cleaned_data['Nodo_Origen']
             dataWeight = weight.cleaned_data['Peso']
-            
-            ArrOrigen.save(commit=False)
-            ArrDest.save(commit=False)
-            ArrPeso.save(commit=False)
-            
-            return render(request,'rutaMasCorta.html',{'source':source,'target':target,'weight':weight,'ArrOrigen':ArrOrigen,'ArrDest':ArrDest,'ArrPeso':ArrPeso})
+        
+            return render(request,'rutaMasCorta.html',{'source':source,'target':target,'weight':weight})
     else:
         source=SourceForm()
         target=TargetForm()

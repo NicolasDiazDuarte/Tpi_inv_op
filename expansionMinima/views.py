@@ -20,7 +20,7 @@ def instanciarNodosEM(request):
         weight_form = WeightForm(request.POST)
         if source_form.is_valid() and target_form.is_valid() and weight_form.is_valid():
             print('esta bien')
-            return redirect('rutaMasCorta')
+            return redirect('expansionMinima')
     else:
         source_form=SourceForm()
         target_form=TargetForm()

@@ -1,0 +1,131 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {%block head%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Algoritmo de la ruta más corta</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    h4 {
+      padding: 10px;
+      margin: auto;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .titulo {
+      background-color: grey;
+      border: 5px solid grey;
+    }
+    p {
+        text-align: justify;
+        font-size: 17px;
+    }
+    .img-grafoRMC {
+        display:block;
+        margin:auto;
+    }
+    h6 {
+        font-size: 19px;
+    }
+    </style>
+    {%endblock%}
+  </head>
+  <body>
+    {%block content%}
+    <nav>
+      <div class="titulo">
+        <h4>Ayuda Teórica</h4>
+      </div>
+    </nav>  
+    <div class="row">
+      <div class="demo-ribbon"></div>
+      <div class="demo-layout">        
+        <main class="demo-main">
+          <div class="demo-container">
+            <div class="demo-content card-panel col s12 m8 offset-m2" >
+              <h3><strong>Teoría - Algoritmo de la ruta más corta</strong></h3>
+                <p>
+                    Para resolver el problema de la ruta más corta considere una <strong>red conexa</strong> y <strong>no dirigida</strong> con dos nodos especiales llamados origen y destino. 
+                    A cada ligadura (arco no dirigido) se asocia una distancia no negativa. El <strong>objetivo</strong> es 
+                    encontrar la ruta más corta <em>—la trayectoria con la mínima distancia total-</em> del origen al destino.
+                    La esencia del procedimiento es que analiza toda la red a partir del origen; identifica de manera 
+                    sucesiva la ruta más corta a cada uno de los nodos en orden ascendente de sus distancias (más cortas), 
+                    desde el origen; el problema queda resuelto en el momento de llegar al nodo destino. 
+                </p>
+                <p>
+                  <strong><u>Objetivo de la n-ésima iteración:</u></strong> Encontrar el n-ésimo nodo más cercano al origen. (Este paso se 
+                  repetirá para n=1,2,... hasta que el n-ésimo nodo más cercano sea el nodo destino.)
+                  <br/>
+                  <br/>
+                  <strong><u>Datos de la n-ésima iteración:</u></strong> n-1 nodos más cercanos al origen que se encontró en las ite 
+                  raciones previas, incluida su ruta más corta y la distancia desde el origen. (Estos nodos y el origen se llaman 
+                  nodos resueltos; el resto son nodos no resueltos.)
+                  <br/>
+                  <br/>
+                  <strong><u>Candidatos para n-ésimo nodo más cercano:</u></strong> Cada nodo resuelto que tiene conexión directa por 
+                  una ligadura con uno o más nodos no resueltos pro porciona un candidato, esto es, el nodo no resuelto que tiene la 
+                  ligadura más corta. (Los empates proporcionan candidatos adicionales.)
+                  <br/>
+                  <br/>
+                  <strong><u>Cálculo del n-ésimo nodo más cercano:</u></strong> para cada nodo resuelto y sus candidatos, se suma la 
+                  distancia entre ellos y la distancia de la ruta más corta desde el origen a este nodo resuelto. El candidato con la 
+                  distancia total más pequeña es el n-ésimo nodo más cercano -los empates proporcionan nodos resueltos adicionales, y 
+                  su ruta más corta es la que genera esta distancia. 
+                  <br/>                  
+                </p>
+                <h5>Pasos a seguir para la resolución:</h5>
+                <h6><strong>Primer paso:</strong></h6>
+                <p>
+                    Elaborar un cuadro con todos los nodos y los ramales que salen de él.
+                </p>
+                <h6><strong>Segundo paso:</strong></h6>
+                <p>
+                    Partiendo del origen, debemos encontrar el nodo más cercano a él.
+                </p>
+                <h6><strong>Tercer paso:</strong></h6>
+                <p>
+                    Anular todos los ramales que entren al nodo más cercano elegido.
+                </p>
+                <h6><strong>Cuarto paso:</strong></h6>
+                <p>
+                    Comenzando en el origen se debe encontrar el nodo más cercano a él, 
+                    por intermedio del(los) nodo(s) ya elegido(s) y volver al tercer paso hasta llegar al destino.
+                </p>
+                <br/>
+                <img class="img-grafoRMC" src="{% static '/img/grafoRMC.png'%}" alt="Ejemplo grafo ruta más corta">
+                </br>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>  
+    <footer class="demo-footer">
+      <div class="mdl-mini-footer--left-section">
+        
+      </div>
+    </footer>
+    <a href="" id="view-source" class="waves-effect waves-light btn">Volver al Inicio</a>
+    {%endblock%}
+  </body>
+</html>

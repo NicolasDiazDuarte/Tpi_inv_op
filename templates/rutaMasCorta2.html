@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         {%block head%}
-        <title>{%block title%}Redes / Algoritmo de Expansión Mínima {%endblock%}</title>
+        <title>{%block title%}Redes / Algoritmo de la ruta más corta {%endblock%}</title>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% static '/css/styles.css' %}" rel="stylesheet" type="text/css">
@@ -16,7 +16,6 @@
         <header>
             <nav class="modelos">
                 <ul>
-                    <a href="http://127.0.0.1:8000/"><img class="img-flecha" src="{% static '/img/flecha.png'%}" alt="flecha atras"></a>
                     <li><a href="http://127.0.0.1:8000/EM/">Algoritmo del Árbol de Extensión Mínima</a></li>
                     <li><a href="http://127.0.0.1:8000/RMC/">Problema de la ruta más Corta</a></li>
                     <li><a href="https://www.google.com/">Problema del Flujo Máximo</a></li>
@@ -25,37 +24,30 @@
             </nav>
         </header> 
         <br/>
-        <h3>Algoritmo del Árbol de Extensión Mínima</h3>
-        <a id="btn2" href="http://127.0.0.1:8000/teoriaEM/">Teoria</a>
-        <section id="cuerpo">
-            <div id="table">
+        <h3>Problema de la ruta más Corta</h3>
+        <section id="body">
+            <div id="container">
                 <table>
                     <thead>
-                        <h2>Ingrese los datos en la siguiente tabla:</h2>
-                        <!--<tr>
-                            <th>Nodo incial</th>
-                            <th>Nodo final</th>
-                            <th>Peso de la relacion</th>
-                        </tr>-->
+                        <tr>
+                            <th>{{source}}</th>
+                            <th>{{target}}</th>
+                            <th>{{weight}}</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <form method="POST">
-                                {%csrf_token%} 
-                                <th>{{source_form.as_p}}</th>
-                                <th>{{target_form.as_p}}</th>
-                                <th>{{weight_form.as_p}}</th>
+                                <td></td>
                                 
-                                <button type="submit" id="btn1" value="Agregar">Agregar</button> 
+                                <button type="submit" id="btn2" value="Obtener resultado">Obtener resultado</button>
                             </form>
                         </tr>
                     </tbody>
                 </table>
-    
             </div>
             <div id="graph">
                 <h2>El grafo correspondiente es:</h2>
-                        
             </div>
         </section>
 

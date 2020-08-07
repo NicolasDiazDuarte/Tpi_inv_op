@@ -13,3 +13,12 @@ def RutaMasCorta(request, *args, **kwargs):
 
 def ExpansionMinima(request, *args, **kwargs):
     return render(request, "expansionMinima.html", {})
+
+def RutaMasCorta(request, *args, **kwargs):
+    return render(request, "rutaMasCorta.html", {})
+
+def TeoriaEM(request, *args, **kwargs):
+    return render(request, "teoriaEM.html", {})
+
+def TeoriaRMC(request, *args, **kwargs):
+    return render(request, "teoriaRMC.html", {})

@@ -1,0 +1,121 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {%block head%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Árbol de Expansión Mínima</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="{% static '/img/utn.png' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    h4 {
+      padding: 10px;
+      margin: auto;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .titulo {
+      background-color: grey;
+      border: 5px solid grey;
+    }
+    p {
+        text-align: justify;
+        font-size: 17px;
+    }
+    </style>
+    {%endblock%}
+  </head>
+  <body>
+    {%block content%}
+    <nav>
+      <div class="titulo">
+        <h4>Ayuda Teórica</h4>
+      </div>
+    </nav>  
+    <div class="row">
+      <div class="demo-ribbon"></div>
+      <div class="demo-layout">        
+        <main class="demo-main">
+          <div class="demo-container">
+            <div class="demo-content card-panel col s12 m8 offset-m2" >
+              <h3><strong>Teoría - Árbol de Expansión Mínima</strong></h3>
+                <p>
+                  El algoritmo del árbol de expansión mínima es un modelo de optimización de redes 
+                  que consiste en enlazar todos los nodos de la red de forma directa y/o indirecta 
+                  con el objetivo de que la longitud total de los arcos o ramales sea mínima 
+                  (entiéndase por longitud del arco una cantidad variable según el contexto operacional de minimización, 
+                  y que puede bien representar una distancia o unidad de medida).
+                </p>
+                <p>
+                  <i>Sean:</i><br><br>
+                  <strong>N</strong> = {1,2,3,…,n} el conjunto de nodos de la red.<br>
+                  <strong>C<sub>k</sub></strong> = Conjunto de nodos que se han enlazado de forma permanente en la iteración k<br>
+                  <strong>Č<sub>k</sub></strong> = Conjunto de nodos que hacen falta por enlazarse de forma permanente.<br>
+                </p>
+              <h5>Paso cero(0): Conceptualización del algoritmo</h5>
+                <p>
+                  Definir los conjuntos C0 = {ø} y Č0 = {N}, es decir que antes del paso 1 no se han enlazado de 
+                  forma permanente nodo alguno, y por ende el conjunto que representa a los nodos que hacen falta 
+                  por enlazarse de forma permanente es igual a la cantidad de nodos que existen en la red.
+                </p>
+              <h5>Paso 1:</h5>
+                <p>
+                  Se debe de escoger de manera arbitraria un nodo en el conjunto Č0 llamado i el cual será el primer nodo permanente, 
+                  a continuación se debe de actualizar el conjunto C1 = {i}, que significa que al tiempo en que el conjunto C1 gana 
+                  el elemento i el conjunto Č0pierde el elemento i por ende ahora será igual a Č1 = N – {i}, además se debe actualizar 
+                  el subíndice de los conjuntos k, el cual ahora será igual a 2.
+                </p>
+              <h5>Paso 2: Paso general «K»</h5>
+                <p>
+                  Se debe de seleccionar un nodo j del conjunto Č<sub>k-1</sub> («k-1» es el subíndice que indica que se está haciendo referencia 
+                  al conjunto de la iteración inmediatamente anterior) el cual tenga el arco o ramal con menor longitud con uno de los nodos 
+                  que se encuentran en el conjunto de nodos de enlace permanente CK-1. Una vez seleccionado se debe de enlazar de forma 
+                  permanente lo cual representa que pasa a formar parte del conjunto de enlaces permanentes y deja de formar parte del conjunto 
+                  que todavía se debe conectar para lograr la expansión. Al actualizar el algoritmo en este paso los conjuntos deben de quedar 
+                  de la siguiente forma.
+                </p>
+                <p>
+                  <strong>C<sub>k</sub> = C<sub>k-1</sub> + {j} mientras que Č<sub>k</sub> = Č<sub>k-1</sub> – {j}</strong>
+                </p>
+                <p>
+                  El paso general que define k que al mismo tiempo representa a las iteraciones debe de ejecutarse toda vez que el 
+                  conjunto Č<sub>k</sub> no sea vacío, cuando este conjunto sea igual a vacío 
+                  se tendrá el árbol de expansión mínima.
+                </p>
+                <p>
+                  El entendimiento del algoritmo desde el punto de vista algebraico no es quizá el más simple, 
+                  sin embargo mediante el ejemplo gráfico se verá que es un algoritmo muy sencillo de elaborar.
+                </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>  
+    <footer class="demo-footer">
+      <div class="mdl-mini-footer--left-section">
+        
+      </div>
+    </footer>
+    <a href="" id="view-source" class="waves-effect waves-light btn">Volver al Inicio</a>
+    {%endblock%}
+  </body>
+</html>

@@ -13,7 +13,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('Redes/', redes, name="redes"),
     path('RMC/', instanciarNodosRMC, name="rutaMasCorta"),
-    path('EM/', instanciarNodosEM, name="expancionMinima"),
+    path('EM/', instanciarNodosEM, name="expansionMinima"),
     path('teoriaEM/', TeoriaEM, name="teoriaEM"),
     path('teoriaRMC/', TeoriaRMC, name="teoriaRMC"),
 ]
